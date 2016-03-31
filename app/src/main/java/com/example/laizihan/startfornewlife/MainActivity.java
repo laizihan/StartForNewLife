@@ -38,7 +38,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
 
-    static interface OnUpdateUIThreadListener {
+    interface OnUpdateUIThreadListener {
         void onDo(Object o);
     }
 

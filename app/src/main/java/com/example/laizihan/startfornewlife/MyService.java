@@ -172,9 +172,9 @@ public class MyService extends Service {
 
     }
 
-    private void testOnAsync() {
+/*    private void testOnAsync() {
         AsyncTask asyncTask = null;
         asyncTask.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, null);
 
-    }
+    }*/
 }
