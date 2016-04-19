@@ -1,23 +1,36 @@
-package com.example.laizihan.startfornewlife;
+package com.example.laizihan.startfornewlife.activity;
 
 import android.animation.ObjectAnimator;
 import android.app.Application;
 import android.content.ComponentName;
+import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.IBinder;
 import android.os.Looper;
+import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
+import android.view.View;
 import android.widget.ImageView;
 
+import com.example.laizihan.startfornewlife.R;
+import com.facebook.drawee.interfaces.DraweeController;
+import com.facebook.drawee.view.SimpleDraweeView;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class SubActivity extends AppCompatActivity {
-    private ImageView imageView;
+    private SimpleDraweeView imageView;
     private final static String TAG = "GestureDetector";
     private GestureDetector mGestureDetector;
 
@@ -25,8 +38,32 @@ public class SubActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        imageView = (ImageView) findViewById(R.id.iv_ratation);
-        setContentView(R.layout.activity_sub);
+        setContentView(R.layout.activity_sub_main);
+        imageView = (SimpleDraweeView) findViewById(R.id.iv_ratation);
+        Uri uri = Uri.parse("http://pic.mmfile.net/2013/08/1315595G7-2.jpg");
+        imageView.setImageURI(uri);
+
+//        createGesture();
+    }
+
+
+
+
+
+
+    private void setImageView(SimpleDraweeView simpleDraweeView){
+//        DraweeController controller = simpleDraweeView.getController();
+        ItemTouchHelper touchHelper;
+
+
+    }
+
+
+
+
+
+    private void createGesture() {
+
         mGestureDetector = new GestureDetector(this, new GestureDetector.OnGestureListener() {
             @Override
             public boolean onDown(MotionEvent e) {
@@ -84,7 +121,13 @@ public class SubActivity extends AppCompatActivity {
                 return false;
             }
         });
+    }
 
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
 
     }
 
@@ -97,9 +140,37 @@ public class SubActivity extends AppCompatActivity {
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
-        mGestureDetector.onTouchEvent(ev);
+//        mGestureDetector.onTouchEvent(ev);
         return super.dispatchTouchEvent(ev);
     }
+
+    private <T extends View> T getViewById(@IdRes int resource) {
+        return (T) findViewById(resource);
+    }
+
+
+    private class CutomizeImageView<DH extends RecyclerView.ViewHolder> extends ImageView {
+
+
+        DH listSource;
+
+        public CutomizeImageView(Context context) {
+            super(context);
+
+        }
+
+
+        private void getData(List<?> data) {
+            data.get(0);
+        }
+
+        private DH getListSource() {
+            return listSource;
+        }
+
+
+    }
+
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {

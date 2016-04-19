@@ -2,6 +2,8 @@ package com.example.laizihan.startfornewlife.widgets;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.view.MotionEvent;
+import android.widget.HorizontalScrollView;
 import android.widget.ScrollView;
 
 /**
@@ -11,6 +13,8 @@ import android.widget.ScrollView;
  * 用途：
  */
 public class MyScrollView extends ScrollView {
+    private OnSccrollChangeListener mListener;
+
     public MyScrollView(Context context) {
         super(context);
     }
@@ -18,4 +22,32 @@ public class MyScrollView extends ScrollView {
     public MyScrollView(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
+
+
+    @Override
+    public boolean onTouchEvent(MotionEvent ev) {
+        super.onTouchEvent(ev);
+        return false;
+    }
+
+    @Override
+    public boolean onInterceptTouchEvent(MotionEvent ev) {
+        super.onInterceptTouchEvent(ev);
+        return false;
+    }
+
+
+
+
+    interface OnSccrollChangeListener {
+        void onChange();
+    }
+
+    public void setOnScrollChangeListener(OnSccrollChangeListener listener){
+        mListener = listener;
+    }
+
+
+
+
 }

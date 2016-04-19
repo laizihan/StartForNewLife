@@ -2,39 +2,48 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.laizihan.startfornewlife">
 
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
+        android:name=".application.StartForStuffApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name=".activity.MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
-
-        </activity>
-        <activity
-            android:name=".SubActivity"
-            android:launchMode="singleTask"
-            android:theme="@style/Theme.AppCompat"
-            android:taskAffinity="com.example.laizihan.startfornewlife.sub">
+            android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".activity.SubActivity"
+            android:launchMode="singleTask"
+            android:taskAffinity="com.example.laizihan.startfornewlife.sub"
+            android:theme="@style/AppTheme">
+
+        </activity>
 
         <service
-            android:name=".MyService"
+            android:name=".activity.MyService"
             android:enabled="true"
             android:exported="true"
-            android:process=":remote"></service>
+            android:process=":remote" />
+
         <provider
             android:name=".widgets.SimpleProvider"
-            android:authorities="com.example.laizihan.startfornewlife.widgets">
+            android:authorities="com.example.laizihan.startfornewlife.widgets"></provider>
 
-        </provider>
+        <activity
+            android:name=".activity.GenericViewsActivity"
+            android:label="@string/title_activity_generic_views"
+            android:theme="@style/AppTheme"></activity>
     </application>
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
 </manifest>

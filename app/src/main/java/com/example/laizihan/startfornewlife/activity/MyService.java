@@ -1,4 +1,4 @@
-package com.example.laizihan.startfornewlife;
+package com.example.laizihan.startfornewlife.activity;
 
 import android.animation.ObjectAnimator;
 import android.app.ActivityManager;
@@ -25,6 +25,8 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+
+import com.example.laizihan.startfornewlife.IMyAidlInterface;
 
 import java.util.concurrent.Executors;
 

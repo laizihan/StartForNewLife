@@ -32,6 +32,7 @@ public class FlingView extends View {
 
     private void init(Context context) {
         mScroller = new OverScroller(context);
+
         GestureDetector gestureDetector = new GestureDetector(context, new MyGestureListener());
         Uri contentUri = UserDictionary.Words.CONTENT_URI;
     }
