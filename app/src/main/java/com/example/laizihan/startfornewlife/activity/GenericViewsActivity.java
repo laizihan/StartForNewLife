@@ -11,9 +11,14 @@ import android.util.Log;
 import android.view.View;
 
 import com.example.laizihan.startfornewlife.R;
+import com.example.laizihan.startfornewlife.jniTest.JniTest;
 import com.facebook.drawee.view.SimpleDraweeView;
 
 public class GenericViewsActivity extends BaseActivity {
+
+    static {
+        System.loadLibrary("fuck");
+    }
 
     private SimpleDraweeView imageView;
 
@@ -31,8 +36,9 @@ public class GenericViewsActivity extends BaseActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                Snackbar.make(view,  new JniTest().getStringFromNDK(), Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+
             }
         });
 
