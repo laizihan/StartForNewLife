@@ -3,12 +3,6 @@ package com.example.laizihan.startfornewlife.subscribe;
 import android.os.MemoryFile;
 import android.os.Process;
 
-import java.io.BufferedInputStream;
-import java.io.FileInputStream;
-import java.io.FilterInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-
 /**
  * Created by laizihan on 16/3/15.
  */
@@ -68,6 +62,8 @@ class DecortorSub extends DecortorBase {
 
 
 }
+
+
 
 
 

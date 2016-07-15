@@ -5,30 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".activity.MainActivity"
-    tools:showIn="@layout/activity_main">
-<!--
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
-
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginBottom="48dp"
-        android:layout_alignParentBottom="true"
-        android:text="选我选我"
-        />-->
+    tools:context="com.example.laizihan.startfornewlife.activity.RecyclerViewActivity"
+    tools:showIn="@layout/activity_recycler_view">
 
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/recycler_view"
+        android:id="@+id/rv_recycler_view"
         />
-
-
-
 
 </RelativeLayout>

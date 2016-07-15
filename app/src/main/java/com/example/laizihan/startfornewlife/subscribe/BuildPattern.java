@@ -51,11 +51,33 @@ class DialogBuilder {
 }
 
 
+class StringTest {
+
+    private String getString() {
+        return new Innner().name;
+    }
+
+    private class Innner {
+
+        private String name;
+
+    }
+
+
+}
+
+
 public class BuildPattern {
+
+    private static int a = 0x01;
+    private static int b = 0x10;
 
 
     public static void main(String[] args) {
-        DialogBuilder dialogBuilder = new DialogBuilder();
-        dialogBuilder.setAge(12).setName("laizihan").build();
+
+        a = a ^ b;
+        b = a ^ b;
+        a = a ^ b;
+        System.out.println(a);
     }
 }

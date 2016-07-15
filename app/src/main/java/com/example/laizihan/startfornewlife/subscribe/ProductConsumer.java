@@ -3,6 +3,8 @@ package com.example.laizihan.startfornewlife.subscribe;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 /**
  * Created by laizihan on 16/3/20.
@@ -92,12 +94,6 @@ public class ProductConsumer {
 
     public static void main(String[] args) {
         Storage storage = new Storage();
-
-
-
-
-
-
 
 
     }

@@ -11,5 +11,6 @@ interface IMyAidlInterface {
 
         void add(int a,int b);
 
+        int getPid();
 
 }

@@ -1,18 +1,13 @@
 package com.example.laizihan.startfornewlife.activity;
 
-import android.animation.ObjectAnimator;
 import android.app.ActivityManager;
-import android.app.Application;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
-import android.content.ServiceConnection;
-import android.os.AsyncTask;
 import android.os.Binder;
 import android.os.HandlerThread;
 import android.os.IBinder;
 import android.os.Looper;
-import android.os.Parcel;
 import android.os.Process;
 import android.os.RemoteException;
 import android.support.annotation.NonNull;
@@ -167,6 +162,11 @@ public class MyService extends Service {
             @Override
             public void add(int a, int b) throws RemoteException {
                 Looper.prepareMainLooper();
+            }
+
+            @Override
+            public int getPid() throws RemoteException {
+                return 0;
             }
         };
         return null;

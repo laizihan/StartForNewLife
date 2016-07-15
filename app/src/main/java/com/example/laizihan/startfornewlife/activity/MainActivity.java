@@ -3,6 +3,7 @@ package com.example.laizihan.startfornewlife.activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Canvas;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
@@ -103,6 +104,13 @@ public class MainActivity extends BaseActivity {
             }
         });
 
+
+        recyclerView.addItemDecoration(new RecyclerView.ItemDecoration() {
+            @Override
+            public void onDraw(Canvas c, RecyclerView parent, RecyclerView.State state) {
+                super.onDraw(c, parent, state);
+            }
+        });
 //        createBottomSheetBehavior(view);
 
 

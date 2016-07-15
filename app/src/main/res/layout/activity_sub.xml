@@ -23,4 +23,10 @@
         android:layout_height="200dp"
         android:layout_below="@id/iv_ratation" />
 
+
+
+    <com.example.laizihan.startfornewlife.widgets.FlingView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
 </RelativeLayout>

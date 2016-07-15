@@ -1,15 +1,10 @@
 package com.example.laizihan.startfornewlife.javaTest;
 
-import android.view.View;
-
 /**
  * 创建时间：2016年04月01日 上午10:40
  * 创建人：赖梓瀚
  * 类名：GenericTest
  * 用途：
- *
- *
- *
  */
 
 interface Data<T> {
@@ -80,29 +75,57 @@ class Generic<TT extends Data> implements Comparable<TT> {
 }
 
 
-interface Gender{
+interface Gender {
     String MALE = "男";
+}
+
+class A {
+    A() {
+        System.out.println("a");
+    }
+}
+
+class B extends A {
+    B() {
+        System.out.println("b");
+    }
 }
 
 
 public class GenericTest {
 
+    //递归
+    private static int gaoTa(int n) {
+        if (n == 0) {
+            return 1;
+        } else if (n == 1) {
+            return 2;
+        } else {
+            return gaoTa(n - 1) * gaoTa(n - 2);
+        }
+    }
+
 
     public static void main(String[] args) {
-        String name = "laizihan";
+
+        System.out.println(gaoTa(5));
+
+/*        String name = "laizihan";
         Integer integer = 23;
         if (false) {
             Data<String> holder = new DataSource<>(name);
             Data<Integer> integerData = new DataSource<>(integer);
             printGeneric(holder);
             printGeneric(integerData);
-        }
+        }*/
+
 
         System.out.println("-------------");
 //        Integer integer1 = new Generic<Data<Integer>>().get().get();
+        A a = new B();
         System.out.println("-------------");
 //        Data<Integer> integerData1 = new Generic<Data<Integer>>().set(new DataSource<Integer>(24)).get();
-        new Generic<Data<Integer>>().get();
+//        new Generic<Data<Integer>>().get();
 
 
     }
